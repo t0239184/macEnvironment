@@ -51,7 +51,7 @@ sourcetree
 
 appcleaner
 android-studio
-
+launchrocket
 
 ## Command install by brew
 zsh
