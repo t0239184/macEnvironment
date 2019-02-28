@@ -2,6 +2,7 @@
 fast build mac environment
 
 ## homebrew install
+brew tap buo/cask-upgrade
 
 ## Application install by homebrew
 
@@ -18,7 +19,7 @@ android-file-transfer
 veeer - window manager
 lacona - super spotlight
 vanilla
-flux
+flux - old-mac anti-blue light app
 
 ### Browser
 chrome
@@ -52,11 +53,14 @@ sourcetree
 appcleaner
 android-studio
 launchrocket
+the-unarchiver
 
 ## Command install by brew
 zsh
 zsh-syntax-highlighting
+zsh-...
 youtube-dl
+ffmpeg - youtube-dl dependency command
 tree
 wget
 mysql
@@ -64,5 +68,6 @@ ntop
 gcc
 g++
 java
+
 
 
