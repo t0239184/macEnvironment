@@ -16,17 +16,17 @@ karabiner-elements
 hyperswitch - like windows alt+tab
 horndis - android USB-AP Share
 android-file-transfer
-veeer - window manager
+spectacle - window manager
 lacona - super spotlight
 vanilla
 flux - old-mac anti-blue light app
-
 ### Browser
 chrome
 firefox
 
 ### edit
 sublime-text
+macdown
 
 ### quick look plugin
 qlcolorcode
@@ -36,6 +36,8 @@ quickloog-pat
 
 ### office
 libreoffice
+pages
+keynote
 
 ### Movie player
 movist - Version 1.4.0 (11)
@@ -46,14 +48,17 @@ dropbox
 
 ### Image
 gimp
+photo image editor pixelstyle - Very like photoshop app
 
 ### git-gui
 sourcetree
-
+gitkraken
 appcleaner
 android-studio
 launchrocket
 the-unarchiver
+
+docker
 
 ## Command install by brew
 zsh
