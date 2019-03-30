@@ -28,6 +28,9 @@ firefox
 sublime-text
 macdown
 
+### markdown-note
+boostnote
+
 ### quick look plugin
 qlcolorcode
 qlimagesize
@@ -73,6 +76,6 @@ ntop
 gcc
 g++
 java
-
+maven
 
 

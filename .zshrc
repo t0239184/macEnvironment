@@ -1,3 +1,4 @@
+ZSH_DISABLE_COMPFIX=true
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -70,7 +71,7 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -99,37 +100,32 @@ source $ZSH/oh-my-zsh.sh
 # [Server] Apache2
 #export APACHE_HOME=/etc/apache2/
 #export APACHE_BASE=/usr/local/WebServer/Documents/
+
 # [Server] Apache Tomcat 8.0.36
-#export CATALINA_HOME=/usr/local/apache-tomcat-8.0.36
+export CATALINA_HOME=/usr/local/Cellar/tomcat/9.0.16/
+export PATH=$CATALINA_HOME/bin:$PATH
 #export WEBAPP=$CATALINA_HOME/webapps/
+
 # [Database] MySQL
-#export MYSQL_HOME=/usr/local/mysql
-#export PATH=$MYSQL_HOME/bin:$PATH
+export MYSQL_HOME=/usr/local/Cellar/mysql/8.0.15
+export PATH=$MYSQL_HOME/bin:$PATH
+
 # [Package Manager] Brew Cask
 export CASK_HOME=/usr/local/Caskroom
+
 # [Version Control]Maven
-#export MAVEN_HOME=/usr/local/Cellar/maven/3.5.0
-#export M2_HOME=$MAVEN_HOME
-#export PATH=$MAVEN_HOME/bin:$PATH
+export MAVEN_HOME=/usr/local/Cellar/maven/3.6.0
+export M2_HOME=$MAVEN_HOME
+export PATH=$MAVEN_HOME/bin:$PATH
+
 # [Language] Nodejs
 #export NODE_HOME=/Users/An/.nvm/versions/node/v8.1.4/
 #export PATH=$NODE_HOME/bin:$PATH
+
 # [Language] Ruby
 #export RUBY_HOME=/usr/local/Cellar/ruby/2.4.1_1
 #export PATH=$RUBY_HOME/bin:$PATH
-# [JavaComplete]
-#export PATH=/Applications/Eclipse.app/Contents/Eclipse:$PATH
-#export NVM_DIR="$HOME/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-#export vimrc=~/.vimrc
-#export bashprofile=~/.bash_profile
-#export ANSLEARN=/usr/local/WebServer/Documents/anslearn/
-# [Wine]
-#export PATH=/Applications/Wine.app/Contents/Resources/bin:$PATH
 
-#export JUNIT_HOME=~/.m2/repository/junit/junit/4.12/junit-4.12.jar
-#export PATH=$JUNIT_HOME:$PATH
-#export PATH=~/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:$PATH
 
 #[Language] Java
 # Set JDK Version for PATH function
@@ -202,3 +198,6 @@ export LESS_TERMCAP_ue=$'\E[0m'     #end underline
 
 # For zsh syntax-highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
