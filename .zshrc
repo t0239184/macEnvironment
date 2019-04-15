@@ -3,7 +3,7 @@ ZSH_DISABLE_COMPFIX=true
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/alan/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -97,13 +97,10 @@ export LANG=en_US.UTF-8
 
 
 #******************** PATH ********************
-# [Server] Apache2
-#export APACHE_HOME=/etc/apache2/
-#export APACHE_BASE=/usr/local/WebServer/Documents/
-
-# [Server] Apache Tomcat 8.0.36
-export CATALINA_HOME=/usr/local/Cellar/tomcat/9.0.16/
+# [Server] Apache Tomcat
+export CATALINA_HOME=/usr/local/Cellar/tomcat/9.0.17/libexec
 export PATH=$CATALINA_HOME/bin:$PATH
+export CLASSPATH=.:$JAVA_HOME/jre/lib:$JAVA_HOME/lib:$JAVA_HOME/lib/tools.jar
 #export WEBAPP=$CATALINA_HOME/webapps/
 
 # [Database] MySQL
@@ -143,7 +140,7 @@ function setjdk() {
 function removeFromPath() {
     export PATH=$(echo $PATH | sed -E -e "s;:$1;;" -e "s;$1:?;;")
 }
-setjdk 1.8              # Set JDK Version
+setjdk 11              # Set JDK Version
 #******************* Terminal ********************
 # Set ls color
 DIR=Gx
@@ -164,24 +161,14 @@ export CLICOLOR=true
 alias rm='rm -ri'
 alias ls='ls -aF'
 alias ll='ls -aFl'
-alias cls='clear'
-alias cd..='cd ..'
-alias cd....='cd .. && cd ..'
 #alias du='ncdu'
-alias top='htop'
 #alias df='dfc'
 alias quit='exit'
 alias youtube-mp3='youtube-dl --embed-thumbnail --add-metadata --extract-audio --audio-format mp3 '
 alias youtube-mp4='youtube-dl --embed-thumbnail --add-metadata --format mp4 '
-#alias youtube-player='mpsyt'
-alias chrome='open /Applications/Google\ Chrome.app'
-#alias vim='/usr/local/Cellar/vim/8.0.1553/bin/vim'
 alias vi='vim --noplugin'
-#alias mvim='mvim -c :NERDTreeToggle'
-#alias tomcat-start='$CATALINA_HOME/bin/startup.sh'
-#alias tomcat-shutdown='$CATALINA_HOME/bin/shutdown.sh'
 #alias wget-website='wget --recursive --no-clobber --page-requisites --html-extension --#convert-links --restrict-file-names=windows --no-parent'
-#alias tree='tree -a'
+alias tree='tree -a'
 #******************** Man Page ********************
 export LESS_TERMCAP_mb=$'\E[1;31m'  #begin blinking
 export LESS_TERMCAP_md=$'\E[4;32m'  #begin bold
