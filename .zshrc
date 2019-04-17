@@ -158,6 +158,7 @@ export LSCOLORS="$DIR$SYM_LINK$SOCKET$PIPE$EXE$BLOCK_SP$CHAR_SP$EXE_SUID$EXE_GUI
 export CLICOLOR=true
 
 #******************** Alias **********************
+alias mkdir='mkdir -p'
 alias rm='rm -ri'
 alias ls='ls -aF'
 alias ll='ls -aFl'
