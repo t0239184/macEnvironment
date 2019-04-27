@@ -98,7 +98,7 @@ export LANG=en_US.UTF-8
 
 #******************** PATH ********************
 # [Server] Apache Tomcat
-export CATALINA_HOME=/usr/local/Cellar/tomcat/9.0.17/libexec
+export CATALINA_HOME=/usr/local/Cellar/tomcat/9.0.19/libexec
 export PATH=$CATALINA_HOME/bin:$PATH
 export CLASSPATH=.:$JAVA_HOME/jre/lib:$JAVA_HOME/lib:$JAVA_HOME/lib/tools.jar
 #export WEBAPP=$CATALINA_HOME/webapps/
@@ -111,7 +111,7 @@ export PATH=$MYSQL_HOME/bin:$PATH
 export CASK_HOME=/usr/local/Caskroom
 
 # [Version Control]Maven
-export MAVEN_HOME=/usr/local/Cellar/maven/3.6.0
+export MAVEN_HOME=/usr/local/Cellar/maven/3.6.1
 export M2_HOME=$MAVEN_HOME
 export PATH=$MAVEN_HOME/bin:$PATH
 
