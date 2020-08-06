@@ -1,3 +1,4 @@
+#screenfetch
 ZSH_DISABLE_COMPFIX=true
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -60,8 +61,14 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+#plugins=(
+#  git
+#  zsh-iterm-touchbar
+#)
 plugins=(
   git
+  web-search
+  z
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -98,10 +105,12 @@ export LANG=en_US.UTF-8
 
 #******************** PATH ********************
 # [Server] Apache Tomcat
-export CATALINA_HOME=/usr/local/Cellar/tomcat/9.0.19/libexec
+#export CATALINA_HOME=/usr/local/Cellar/tomcat/apache-tomcat-8.0.15
+#export CATALINA_HOME=/usr/local/Cellar/tomcat/apache-tomcat-8.5.43
+export CATALINA_HOME=/usr/local/lib/tomcat/apache-tomcat-8.5.43
 export PATH=$CATALINA_HOME/bin:$PATH
 export CLASSPATH=.:$JAVA_HOME/jre/lib:$JAVA_HOME/lib:$JAVA_HOME/lib/tools.jar
-#export WEBAPP=$CATALINA_HOME/webapps/
+export WEBAPP=$CATALINA_HOME/webapps/
 
 # [Database] MySQL
 export MYSQL_HOME=/usr/local/Cellar/mysql/8.0.15
@@ -123,6 +132,8 @@ export PATH=$MAVEN_HOME/bin:$PATH
 #export RUBY_HOME=/usr/local/Cellar/ruby/2.4.1_1
 #export PATH=$RUBY_HOME/bin:$PATH
 
+export REDIS_HOME=/usr/local/Cellar/redis/6.0.3
+export PATH=$REDIS_HOME/bin:$PATH
 
 #[Language] Java
 # Set JDK Version for PATH function
@@ -140,7 +151,12 @@ function setjdk() {
 function removeFromPath() {
     export PATH=$(echo $PATH | sed -E -e "s;:$1;;" -e "s;$1:?;;")
 }
-setjdk 11              # Set JDK Version
+#setjdk 1.8              # Set JDK Version
+setjdk 14              # Set JDK Version
+
+#[Language] Scala
+export SCALA_HOME=/usr/local/Cellar/scala/2.13.1
+export PATH=$SCALA_HOME/bin:$PATH
 #******************* Terminal ********************
 # Set ls color
 DIR=Gx
@@ -160,8 +176,10 @@ export CLICOLOR=true
 #******************** Alias **********************
 alias mkdir='mkdir -p'
 alias rm='rm -ri'
+alias trash='rmtrash'
 alias ls='ls -aF'
 alias ll='ls -aFl'
+alias open='open .'
 #alias du='ncdu'
 #alias df='dfc'
 alias quit='exit'
@@ -170,6 +188,8 @@ alias youtube-mp4='youtube-dl --embed-thumbnail --add-metadata --format mp4 '
 alias vi='vim --noplugin'
 #alias wget-website='wget --recursive --no-clobber --page-requisites --html-extension --#convert-links --restrict-file-names=windows --no-parent'
 alias tree='tree -a'
+alias mvnnt='mvn -Dmaven.test.skip=true'
+alias cman='man -M /usr/local/share/man/zh_CN'
 #******************** Man Page ********************
 export LESS_TERMCAP_mb=$'\E[1;31m'  #begin blinking
 export LESS_TERMCAP_md=$'\E[4;32m'  #begin bold
@@ -189,3 +209,22 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+# load zgen ****************************************
+#source "${HOME}/.zgen/zgen.zsh"
+
+# if the init scipt doesn't exist
+#if ! zgen saved; then
+
+  # specify plugins here
+#  zgen oh-my-zsh
+
+  # generate the init script from plugins above
+#  zgen save
+#fi
+#zgen load iam4x/zsh-iterm-touchbar
+# ***************************************************
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
